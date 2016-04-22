@@ -12,12 +12,4 @@
 
 ### Usage
 
-    docker run -it --rm ruby-docker
-
-or:
-
-    `./execute-bash-on-container.sh`
-
-#### Run `ruby`
-
-    docker run -it --rm ruby-docker ruby
+    ./execute-bash-on-container.sh
