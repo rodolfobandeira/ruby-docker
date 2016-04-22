@@ -8,18 +8,20 @@
 FROM ubuntu:14.04
 
 # Install.
-RUN	apt-get -y install software-properties-common && \
+RUN \
+  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
+  apt-get -y install software-properties-common && \
 	add-apt-repository -y ppa:openjdk-r/ppa
-RUN apt-get -y update
-RUN apt-get -y install openjdk-8-jdk
+RUN apt-get -y update && \
+  apt-get -y install openjdk-8-jdk wget
 RUN update-alternatives --config java
 RUN update-alternatives --config javac
-RUN https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
+RUN cd
+RUN wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
 RUN dpkg -i elasticsearch-2.3.1.deb
 RUN update-rc.d elasticsearch defaults
 
 RUN \
-  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
   apt-get -y upgrade && \
   apt-get install -y build-essential && \
