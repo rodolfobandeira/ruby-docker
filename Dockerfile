@@ -16,7 +16,7 @@ RUN apt-get -y update && \
   apt-get -y install openjdk-8-jdk wget
 RUN update-alternatives --config java
 RUN update-alternatives --config javac
-RUN cd
+RUN cd ~
 RUN wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb
 RUN dpkg -i elasticsearch-2.3.1.deb
 RUN update-rc.d elasticsearch defaults
@@ -34,7 +34,7 @@ RUN \
   apt-get install -y mongodb imagemagick redis-server phantomjs
   rm -rf /var/lib/apt/lists/*
 
-RUN cd
+RUN cd ~
 RUN git clone git://github.com/sstephenson/rbenv.git .rbenv
 RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
@@ -44,8 +44,6 @@ RUN echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 RUN exec $SHELL
 RUN rbenv install 2.2.2
 RUN rbenv global 2.2.2
-
-
 
 # Set environment variables.
 ENV HOME /root
