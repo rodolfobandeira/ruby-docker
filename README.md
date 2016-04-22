@@ -8,7 +8,7 @@
 
 3. `cd ruby-docker`
 
-4. `./setup.sh` (This processes could take 10 minute)s
+4. `./setup.sh` (This processes could take 10 minutes)
 
 ### Usage
 
