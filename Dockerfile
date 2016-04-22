@@ -31,7 +31,7 @@ RUN \
   apt-get install -y zlib1g-dev libssl-dev libreadline-dev libyaml-dev && \ 
   apt-get install -y libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libgmp-dev && \
   apt-get install -y libcurl4-openssl-dev python-software-properties libffi-dev && \
-  apt-get install -y mongodb imagemagick redis-server phantomjs
+  apt-get install -y mongodb imagemagick redis-server phantomjs && \
   rm -rf /var/lib/apt/lists/*
 
 RUN cd ~
