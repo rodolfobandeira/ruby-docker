@@ -12,4 +12,4 @@
 
 ### Usage
 
-    ./execute-bash-on-container.sh
+    ./run.sh
