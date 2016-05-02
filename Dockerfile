@@ -8,6 +8,7 @@
 FROM ubuntu
 
 # Install.
+RUN apt-get -y update
 RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get -y install software-properties-common && \
