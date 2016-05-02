@@ -27,7 +27,7 @@ RUN \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
   apt-get install -y curl git git-core htop man unzip vim wget && \
-  apt-get install -y ruby ruby-dev ruby-bundler rbenv ruby-build && \
+  apt-get install -y ruby-dev ruby-bundler && \
   apt-get install -y zlib1g-dev libssl-dev libreadline-dev libyaml-dev && \ 
   apt-get install -y libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libgmp-dev && \
   apt-get install -y libcurl4-openssl-dev python-software-properties libffi-dev && \
