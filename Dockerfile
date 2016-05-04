@@ -26,16 +26,16 @@ RUN \
   apt-get update && \
   apt-get -y upgrade && \
   apt-get install -y build-essential && \
-  apt-get install -y software-properties-common && \
-  apt-get install -y curl git git-core htop man unzip vim wget && \
+  apt-get install -y curl git git-core htop man unzip vim && \
   apt-get install -y ruby-dev ruby-bundler && \
   apt-get install -y zlib1g-dev libssl-dev libreadline-dev libyaml-dev && \ 
   apt-get install -y libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libgmp-dev && \
   apt-get install -y libcurl4-openssl-dev python-software-properties libffi-dev && \
-  apt-get install -y mongodb imagemagick redis-server phantomjs && \
+  apt-get install -y mongodb imagemagick redis-server && \
   rm -rf /var/lib/apt/lists/*
 
 RUN cd ~
+RUN wget https://bitbucket.org/rodolfobandeira/phantomjs-1.9.2-ubuntu-mirror/downloads/phantomjs-1.9.2-linux-x86_64.tar.bz2
 # Install rbenv and ruby-build
 RUN git clone https://github.com/sstephenson/rbenv.git /root/.rbenv
 RUN git clone https://github.com/sstephenson/ruby-build.git /root/.rbenv/plugins/ruby-build
